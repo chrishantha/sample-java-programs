@@ -59,6 +59,8 @@ public class App {
         jcmdr.setProgramName(App.class.getSimpleName());
         jcmdr.parse(args);
 
+        System.out.println(app);
+
         if (app.help) {
             jcmdr.usage();
             return;
@@ -96,8 +98,33 @@ public class App {
     }
 
     private void startThread(int i, String name, Runnable worker) {
-        Thread thread = new Thread(new HashingWorker(hashDataLength, hashingAlgorithm));
+        Thread thread = new Thread(worker);
         thread.setName(String.format("Thread %d: %s", i, name));
         thread.start();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("App [runHashing=");
+        builder.append(runHashing);
+        builder.append(", runSleeping=");
+        builder.append(runSleeping);
+        builder.append(", runMath=");
+        builder.append(runMath);
+        builder.append(", hashingWorkers=");
+        builder.append(hashingWorkers);
+        builder.append(", sleepingWorkers=");
+        builder.append(sleepingWorkers);
+        builder.append(", mathWorkers=");
+        builder.append(mathWorkers);
+        builder.append(", hashDataLength=");
+        builder.append(hashDataLength);
+        builder.append(", hashingAlgorithm=");
+        builder.append(hashingAlgorithm);
+        builder.append(", exitTimeoutInSeconds=");
+        builder.append(exitTimeoutInSeconds);
+        builder.append("]");
+        return builder.toString();
     }
 }
