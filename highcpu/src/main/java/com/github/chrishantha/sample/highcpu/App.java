@@ -33,10 +33,10 @@ public class App {
     private boolean runMath = true;
 
     @Parameter(names = "--hashing-workers", description = "Hashing Workers")
-    private int hashingWorkers = 1;
+    private int hashingWorkers = 6;
 
     @Parameter(names = "--sleeping-workers", description = "Sleeping Workers")
-    private int sleepingWorkers = 3;
+    private int sleepingWorkers = 4;
 
     @Parameter(names = "--math-workers", description = "Math Workers")
     private int mathWorkers = 2;
