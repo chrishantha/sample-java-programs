@@ -27,11 +27,13 @@ public class MathWorker implements Runnable {
 
     @Override
     public void run() {
+        BigDecimal bigDecimal = BigDecimal.ZERO;
         while (true) {
-            BigDecimal sum = BigDecimal.ZERO;
-            for (int i = 0; i <= Integer.MAX_VALUE; i++) {
-                double value = Math.atan(Math.sqrt(Math.pow(random.nextInt(10), random.nextDouble())));
-                sum = sum.add(BigDecimal.valueOf(value));
+            double value = Math.atan(Math.sqrt(Math.pow(random.nextInt(10), random.nextDouble())));
+            if (random.nextInt(10) > 5) {
+                bigDecimal = bigDecimal.add(BigDecimal.valueOf(value));
+            } else {
+                bigDecimal = bigDecimal.subtract(BigDecimal.valueOf(value));
             }
         }
     }
