@@ -19,7 +19,7 @@
     <parent>
         <groupId>org.apache</groupId>
         <artifactId>apache</artifactId>
-        <version>17</version>
+        <version>18</version>
     </parent>
 
     <groupId>com.github.chrishantha.sample</groupId>
@@ -137,6 +137,7 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <useRepositoryLayout>true</useRepositoryLayout>
                         </configuration>
                     </execution>
                 </executions>
@@ -191,7 +192,7 @@
         <junit.version>4.12</junit.version>
         <jcommander.version>1.48</jcommander.version>
         <metrics.version>3.1.2</metrics.version>
-        <slf4j.version>1.7.12</slf4j.version>
+        <slf4j.version>1.7.21</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
     </properties>
 </project>
