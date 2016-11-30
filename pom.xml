@@ -14,8 +14,7 @@
     # See the License for the specific language governing permissions and
     # limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <groupId>org.apache</groupId>
         <artifactId>apache</artifactId>
@@ -24,7 +23,7 @@
 
     <groupId>com.github.chrishantha.sample</groupId>
     <artifactId>java-samples</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <name>Java Samples</name>
@@ -47,7 +46,7 @@
         <url>https://github.com/chrishantha/sample-java-programs.git</url>
         <developerConnection>scm:git:https://github.com/chrishantha/sample-java-programs.git</developerConnection>
         <connection>scm:git:https://github.com/chrishantha/sample-java-programs.git</connection>
-        <tag>HEAD</tag>
+        <tag>v0.0.1</tag>
     </scm>
 
     <modules>
