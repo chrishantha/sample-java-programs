@@ -44,9 +44,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/wso2/carbon-metrics.git</url>
-        <developerConnection>scm:git:https://github.com/wso2/carbon-metrics.git</developerConnection>
-        <connection>scm:git:https://github.com/wso2/carbon-metrics.git</connection>
+        <url>https://github.com/chrishantha/sample-java-programs.git</url>
+        <developerConnection>scm:git:https://github.com/chrishantha/sample-java-programs.git</developerConnection>
+        <connection>scm:git:https://github.com/chrishantha/sample-java-programs.git</connection>
         <tag>HEAD</tag>
     </scm>
 
