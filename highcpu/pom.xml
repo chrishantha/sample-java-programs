@@ -19,7 +19,7 @@
     <parent>
         <groupId>com.github.chrishantha.sample</groupId>
         <artifactId>java-samples</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
