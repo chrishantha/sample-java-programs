@@ -19,7 +19,6 @@ import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -30,9 +29,6 @@ public class App {
 
     @Parameter(names = "--max", description = "Maximum limit to generate prime numbers")
     private int max = 100000;
-
-    @Parameter(names = "--use-set", description = "Use Hash Set for Prime Numbers", arity = 0)
-    private boolean useSet;
 
     @Parameter(names = "--help", description = "Display Help", help = true)
     private boolean help;
@@ -54,7 +50,7 @@ public class App {
     }
 
     private void start() {
-        Collection<Integer> primeNumbers = useSet ? new HashSet<>() : new LinkedList<>();
+        Collection<Integer> primeNumbers = new LinkedList<>();
         System.out.println("Generating Prime numbers between 1 and " + max);
         for (int i = 1; i < max; i++) {
             boolean isPrimeNumber = true;
@@ -90,8 +86,6 @@ public class App {
         builder.append(randomNumbersCount);
         builder.append(", max=");
         builder.append(max);
-        builder.append(", useSet=");
-        builder.append(useSet);
         builder.append("]");
         return builder.toString();
     }

@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.chrishantha.sample.latencies;
+package com.github.chrishantha.sample.allocations;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 
 public class App {
 
-    @Parameter(names = "--count", description = "Print Count")
-    private int count = 50;
+    @Parameter(names = "--max", description = "Max Numbers")
+    private long max = 10_000_000L;
 
     @Parameter(names = "--help", description = "Display Help", help = true)
     private boolean help;
@@ -42,62 +42,32 @@ public class App {
         app.start();
     }
 
-    private class EvenThread extends Thread {
-
-        public EvenThread() {
-            super("Even-Thread");
+    boolean isPrime(Long n) {
+        //check if n is a multiple of 2
+        if (n % 2 == 0) return false;
+        //if not, then just check the odds
+        for (int i = 3; i * i <= n; i += 2) {
+            if (n % i == 0)
+                return false;
         }
-
-        @Override
-        public void run() {
-            for (int i = 0; i < count; i++) {
-                if (isEven(i)) {
-                    printNumber(i);
-                }
-            }
-        }
-    }
-
-    private class OddThread extends Thread {
-
-        public OddThread() {
-            super("Odd-Thread");
-        }
-
-        @Override
-        public void run() {
-            for (int i = 0; i < count; i++) {
-                if (!isEven(i)) {
-                    printNumber(i);
-                }
-            }
-        }
-    }
-
-
-    private void printNumber(int i) {
-        System.out.format("Thread: %s, Number: %d%n", Thread.currentThread().getName(), i);
-    }
-
-    private synchronized boolean isEven(int i) {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return i % 2 == 0;
+        return true;
     }
 
     private void start() {
-        new OddThread().start();
-        new EvenThread().start();
+        Long primeCount = 0L;
+        for (long i = 0; i < max; i++) {
+            if (isPrime(i)) {
+                primeCount++;
+            }
+        }
+        System.out.format("Found %d prime numbers%n", primeCount);
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("App [count=");
-        builder.append(count);
+        builder.append("App [max=");
+        builder.append(max);
         builder.append("]");
         return builder.toString();
     }

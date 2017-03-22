@@ -16,5 +16,7 @@ See Threads -> Contention tab to see the Locks and also see Threads -> Lock Inst
 
 Since there is no shared resource, you can avoid the lock and improve the performance.
 
+Remove the `synchronized` keyword in `isEven` method.
+
 Run the program without locks.
-`java -jar -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=30s,name=Latencies,filename=latencies-fixed.jfr -XX:FlightRecorderOptions=loglevel=info target/latencies.jar --lock false`
+`java -jar -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=30s,name=Latencies,filename=latencies-fixed.jfr -XX:FlightRecorderOptions=loglevel=info target/latencies.jar`

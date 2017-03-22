@@ -53,6 +53,7 @@
         <module>highcpu</module>
         <module>hotmethods</module>
         <module>latencies</module>
+        <module>allocations</module>
     </modules>
 
     <dependencyManagement>
