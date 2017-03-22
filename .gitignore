@@ -15,6 +15,10 @@ target/
 .project
 .classpath
 
+#Idea Files
+.idea
+*.iml
+
 tmp/
 *.tmp
 *.bak

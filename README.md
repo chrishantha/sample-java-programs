@@ -5,12 +5,9 @@ Sample Java Programs
 
 This repository contains some sample programs. All are Maven projects and can be run directly using "java -jar"
 
+## How to build
 
-## Java Programs
-
-**highcpu**
-
-A java program consuming high CPU usage. This program was inspired by a sample found in the article "[Identifying which Java Thread is consuming most CPU](http://code.nomad-labs.com/2010/11/18/identifying-which-java-thread-is-consuming-most-cpu/)"
+Run `mvn clean install` to build all sample programs
 
 ## License
 
