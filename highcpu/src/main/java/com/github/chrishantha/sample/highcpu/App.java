@@ -15,11 +15,11 @@
  */
 package com.github.chrishantha.sample.highcpu;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class App {
 
