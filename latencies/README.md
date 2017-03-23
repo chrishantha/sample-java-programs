@@ -3,10 +3,12 @@ Sample to show latencies in Java Flight Recording
 
 This program has two threads: Even and Odd to print Even and Odd numbers.
 
-Run the program without any arguments and also make a profiling recording.
+Run the program and also make a profiling recording.
 
-For example:
-`java -jar -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=30s,name=Latencies,filename=latencies.jfr -XX:FlightRecorderOptions=loglevel=info target/latencies.jar`
+### How to run
+`java -Xms64m -Xmx64m -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=30s,name=Latencies,filename=latencies.jfr -XX:FlightRecorderOptions=loglevel=info -jar target/latencies.jar`
+
+### Analyzing Java Flight Recording
 
 In Threads -> Latencies tab, you should see that the program has many blocked events.
 
@@ -14,9 +16,8 @@ You should also see red blocks in Events -> Graph tab. Red blocks are not good a
  
 See Threads -> Contention tab to see the Locks and also see Threads -> Lock Instances to check whether both threads share the same lock instances.
 
-Since there is no shared resource, you can avoid the lock and improve the performance.
+### Improving Performance
 
-Remove the `synchronized` keyword in `isEven` method.
+Since there is no shared resource to protect, you can avoid the synchronized keyword and improve the performance.
 
-Run the program without locks.
-`java -jar -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=30s,name=Latencies,filename=latencies-fixed.jfr -XX:FlightRecorderOptions=loglevel=info target/latencies.jar`
+Try the program again after removing the `synchronized` keyword in `isEven` method.
