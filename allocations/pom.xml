@@ -29,14 +29,6 @@
     <packaging>jar</packaging>
     <name>allocations</name>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.beust</groupId>
-            <artifactId>jcommander</artifactId>
-        </dependency>
-    </dependencies>
-
-
     <properties>
         <fully.qualified.main.class>com.github.chrishantha.sample.allocations.App</fully.qualified.main.class>
     </properties>
