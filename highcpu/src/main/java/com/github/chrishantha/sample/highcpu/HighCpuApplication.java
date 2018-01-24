@@ -15,13 +15,13 @@
  */
 package com.github.chrishantha.sample.highcpu;
 
-import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import com.github.chrishantha.sample.base.SampleApplication;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class App {
+public class HighCpuApplication implements SampleApplication {
 
     @Parameter(names = "--run-hashing", description = "Run Hashing Worker", arity = 1)
     private boolean runHashing = true;
@@ -47,29 +47,11 @@ public class App {
     @Parameter(names = "--hashing-algo", description = "Hashing Algorithm")
     private String hashingAlgorithm = "SHA-1";
 
-    @Parameter(names = "--help", description = "Display Help", help = true)
-    private boolean help;
-
     @Parameter(names = "--exit-timeout", description = "Exit Timeout in Seconds (Default 2 minutes. Use 0 to run forever)")
     private int exitTimeoutInSeconds = 2 * 60;
 
-    public static void main(String[] args) {
-        App app = new App();
-        final JCommander jcmdr = new JCommander(app);
-        jcmdr.setProgramName(App.class.getSimpleName());
-        jcmdr.parse(args);
-
-        System.out.println(app);
-
-        if (app.help) {
-            jcmdr.usage();
-            return;
-        }
-
-        app.start();
-    }
-
-    private void start() {
+    @Override
+    public void start() {
         System.out.println("Starting Application...");
         if (exitTimeoutInSeconds > 0) {
             final Timer timer = new Timer();
@@ -106,7 +88,7 @@ public class App {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("App [runHashing=");
+        builder.append("HighCpuApplication [runHashing=");
         builder.append(runHashing);
         builder.append(", runSleeping=");
         builder.append(runSleeping);

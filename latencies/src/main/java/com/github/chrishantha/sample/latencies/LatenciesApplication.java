@@ -15,32 +15,13 @@
  */
 package com.github.chrishantha.sample.latencies;
 
-import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import com.github.chrishantha.sample.base.SampleApplication;
 
-public class App {
+public class LatenciesApplication implements SampleApplication {
 
     @Parameter(names = "--count", description = "Print Count")
     private int count = 50;
-
-    @Parameter(names = "--help", description = "Display Help", help = true)
-    private boolean help;
-
-    public static void main(String[] args) {
-        App app = new App();
-        final JCommander jcmdr = new JCommander(app);
-        jcmdr.setProgramName(App.class.getSimpleName());
-        jcmdr.parse(args);
-
-        System.out.println(app);
-
-        if (app.help) {
-            jcmdr.usage();
-            return;
-        }
-
-        app.start();
-    }
 
     private class EvenThread extends Thread {
 
@@ -88,15 +69,16 @@ public class App {
         return i % 2 == 0;
     }
 
-    private void start() {
-        new OddThread().start();
+    @Override
+    public void start() {
         new EvenThread().start();
+        new OddThread().start();
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("App [count=");
+        builder.append("LatenciesApplication [count=");
         builder.append(count);
         builder.append("]");
         return builder.toString();

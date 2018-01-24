@@ -15,32 +15,13 @@
  */
 package com.github.chrishantha.sample.allocations;
 
-import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import com.github.chrishantha.sample.base.SampleApplication;
 
-public class App {
+public class AllocationsApplication implements SampleApplication {
 
     @Parameter(names = "--max", description = "Max Numbers")
     private long max = 10_000_000L;
-
-    @Parameter(names = "--help", description = "Display Help", help = true)
-    private boolean help;
-
-    public static void main(String[] args) {
-        App app = new App();
-        final JCommander jcmdr = new JCommander(app);
-        jcmdr.setProgramName(App.class.getSimpleName());
-        jcmdr.parse(args);
-
-        System.out.println(app);
-
-        if (app.help) {
-            jcmdr.usage();
-            return;
-        }
-
-        app.start();
-    }
 
     boolean isPrime(Long n) {
         //check if n is a multiple of 2
@@ -53,7 +34,8 @@ public class App {
         return true;
     }
 
-    private void start() {
+    @Override
+    public void start() {
         Long primeCount = 0L;
         for (long i = 0; i < max; i++) {
             if (isPrime(i)) {
@@ -66,7 +48,7 @@ public class App {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("App [max=");
+        builder.append("AllocationsApplication [max=");
         builder.append(max);
         builder.append("]");
         return builder.toString();

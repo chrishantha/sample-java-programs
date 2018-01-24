@@ -15,14 +15,14 @@
  */
 package com.github.chrishantha.sample.hotmethods;
 
-import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import com.github.chrishantha.sample.base.SampleApplication;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class App {
+public class HotMethodsApplication implements SampleApplication {
 
     @Parameter(names = "--count", description = "Random Numbers Count")
     private int randomNumbersCount = 1000000;
@@ -30,26 +30,8 @@ public class App {
     @Parameter(names = "--max", description = "Maximum limit to generate prime numbers")
     private int max = 100000;
 
-    @Parameter(names = "--help", description = "Display Help", help = true)
-    private boolean help;
-
-    public static void main(String[] args) {
-        App app = new App();
-        final JCommander jcmdr = new JCommander(app);
-        jcmdr.setProgramName(App.class.getSimpleName());
-        jcmdr.parse(args);
-
-        System.out.println(app);
-
-        if (app.help) {
-            jcmdr.usage();
-            return;
-        }
-
-        app.start();
-    }
-
-    private void start() {
+    @Override
+    public void start() {
         Collection<Integer> primeNumbers = new LinkedList<>();
         System.out.println("Generating Prime numbers between 1 and " + max);
         for (int i = 1; i < max; i++) {
@@ -82,7 +64,7 @@ public class App {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("App [randomNumbersCount=");
+        builder.append("HotMethodsApplication [randomNumbersCount=");
         builder.append(randomNumbersCount);
         builder.append(", max=");
         builder.append(max);

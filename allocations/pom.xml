@@ -29,7 +29,19 @@
     <packaging>jar</packaging>
     <name>allocations</name>
 
-    <properties>
-        <fully.qualified.main.class>com.github.chrishantha.sample.allocations.App</fully.qualified.main.class>
-    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.chrishantha.sample</groupId>
+            <artifactId>base</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

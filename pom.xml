@@ -43,6 +43,7 @@
     </scm>
 
     <modules>
+        <module>base</module>
         <module>highcpu</module>
         <module>hotmethods</module>
         <module>latencies</module>
@@ -56,17 +57,39 @@
                 <artifactId>jcommander</artifactId>
                 <version>${jcommander.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.chrishantha.sample</groupId>
+                <artifactId>base</artifactId>
+                <version>${samples.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.beust</groupId>
-            <artifactId>jcommander</artifactId>
-        </dependency>
-    </dependencies>
-
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                            <configuration>
+                                <transformers>
+                                    <transformer
+                                            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                        <mainClass>com.github.chrishantha.sample.base.App</mainClass>
+                                    </transformer>
+                                </transformers>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -77,27 +100,6 @@
                     <source>${javac.target}</source>
                     <target>${javac.target}</target>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>${fully.qualified.main.class}</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
         <finalName>${project.name}</finalName>
@@ -111,10 +113,14 @@
                     <plugin>
                         <groupId>org.apache.rat</groupId>
                         <artifactId>apache-rat-plugin</artifactId>
+                        <version>0.12</version>
                         <configuration>
                             <excludes>
                                 <exclude>**/README.md</exclude>
                                 <exclude>.travis.yml</exclude>
+                                <exclude>**/*.svg</exclude>
+                                <exclude>dependency-reduced-pom.xml</exclude>
+                                <exclude>**/com.github.chrishantha.sample.base.SampleApplication</exclude>
                             </excludes>
                         </configuration>
                         <executions>
@@ -134,6 +140,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javac.target>1.8</javac.target>
+        <samples.version>0.0.2-SNAPSHOT</samples.version>
         <jcommander.version>1.72</jcommander.version>
     </properties>
 </project>
