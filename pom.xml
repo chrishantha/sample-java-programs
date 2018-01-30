@@ -48,6 +48,7 @@
         <module>hotmethods</module>
         <module>latencies</module>
         <module>allocations</module>
+        <module>memoryleak</module>
     </modules>
 
     <dependencyManagement>
