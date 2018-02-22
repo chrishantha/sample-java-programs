@@ -49,6 +49,7 @@
         <module>latencies</module>
         <module>allocations</module>
         <module>memoryleak</module>
+        <module>deadlock</module>
     </modules>
 
     <dependencyManagement>
