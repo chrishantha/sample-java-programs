@@ -24,6 +24,8 @@ public class HashingWorker implements Runnable {
     private final String algorithm;
     private final long length;
 
+    private byte[] lastComputedHash;
+
     public HashingWorker(long length, String algorithm) {
         this.length = length;
         this.algorithm = algorithm;
@@ -48,6 +50,11 @@ public class HashingWorker implements Runnable {
 
             // Hash
             digest.update(data.getBytes());
+            byte[] computedHash = digest.digest();
+            if (lastComputedHash != null && computedHash.length != lastComputedHash.length) {
+                throw new IllegalStateException("Is the hash computation correct??");
+            }
+            lastComputedHash = computedHash;
         }
     }
 }
