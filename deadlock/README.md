@@ -1,5 +1,5 @@
-Sample to a deadlock in Java Application
-===========================================
+Sample to show deadlocks in a Java Application
+==============================================
 
 This sample application shows an example of a deadlock. Following is the definition of "deadlock" according to
 [Java Tutorial](https://docs.oracle.com/javase/tutorial/essential/concurrency/deadlock.html)
@@ -10,7 +10,7 @@ In this application, there are two threads trying to acquire two locks.
 
 ### How to run
 
-The application will throw Out of Memory error after some time when you run following command
+The application will throw Out of Memory error after some time when you run the application with default parameters.
 
 `java -Xms1g -Xmx1g -jar target/deadlock.jar`
 
