@@ -25,7 +25,7 @@ import java.util.ServiceLoader;
 public class App {
 
     private static class CommonArgs {
-        @Parameter(names = "--help", description = "Display Help", help = true)
+        @Parameter(names = {"-h", "--help"}, description = "Display Help", help = true)
         private boolean help;
     }
 
