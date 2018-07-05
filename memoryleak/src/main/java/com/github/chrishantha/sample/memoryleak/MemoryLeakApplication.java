@@ -37,6 +37,7 @@ public class MemoryLeakApplication implements SampleApplication {
     @Parameter(names = "--key-type", description = "Key Type: Good or Bad")
     private KeyType keyType = KeyType.BAD;
 
+    @SuppressWarnings("InfiniteLoopStatement")
     @Override
     public void start() {
         Map<Key, String> map = new HashMap<>();
@@ -52,14 +53,10 @@ public class MemoryLeakApplication implements SampleApplication {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("MemoryLeakApplication [length=");
-        builder.append(length);
-        builder.append(", max=");
-        builder.append(max);
-        builder.append(", keyType=");
-        builder.append(keyType);
-        builder.append("]");
-        return builder.toString();
+        return "MemoryLeakApplication{" +
+                "length=" + length +
+                ", max=" + max +
+                ", keyType=" + keyType +
+                '}';
     }
 }

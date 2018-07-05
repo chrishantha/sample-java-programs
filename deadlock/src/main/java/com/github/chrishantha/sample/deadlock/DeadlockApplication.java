@@ -79,12 +79,9 @@ public class DeadlockApplication implements SampleApplication {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("DeadlockApplication [count=");
-        builder.append(count);
-        builder.append(", delay=");
-        builder.append(delay);
-        builder.append("]");
-        return builder.toString();
+        return "DeadlockApplication{" +
+                "count=" + count +
+                ", delay=" + delay +
+                '}';
     }
 }

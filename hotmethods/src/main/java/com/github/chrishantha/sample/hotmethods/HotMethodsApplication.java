@@ -63,12 +63,9 @@ public class HotMethodsApplication implements SampleApplication {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("HotMethodsApplication [randomNumbersCount=");
-        builder.append(randomNumbersCount);
-        builder.append(", max=");
-        builder.append(max);
-        builder.append("]");
-        return builder.toString();
+        return "HotMethodsApplication{" +
+                "randomNumbersCount=" + randomNumbersCount +
+                ", max=" + max +
+                '}';
     }
 }

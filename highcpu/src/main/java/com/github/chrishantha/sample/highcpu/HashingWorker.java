@@ -31,14 +31,15 @@ public class HashingWorker implements Runnable {
         this.algorithm = algorithm;
     }
 
+    @SuppressWarnings("InfiniteLoopStatement")
     @Override
     public void run() {
         while (true) {
-            String data = "";
+            StringBuilder data = new StringBuilder();
 
             // Some random data
             for (int i = 0; i < length; i++) {
-                data += UUID.randomUUID().toString();
+                data.append(UUID.randomUUID().toString());
             }
 
             MessageDigest digest;
@@ -49,7 +50,7 @@ public class HashingWorker implements Runnable {
             }
 
             // Hash
-            digest.update(data.getBytes());
+            digest.update(data.toString().getBytes());
             byte[] computedHash = digest.digest();
             if (lastComputedHash != null && computedHash.length != lastComputedHash.length) {
                 throw new IllegalStateException("Is the hash computation correct??");

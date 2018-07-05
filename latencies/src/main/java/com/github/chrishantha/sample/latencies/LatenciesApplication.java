@@ -77,10 +77,8 @@ public class LatenciesApplication implements SampleApplication {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("LatenciesApplication [count=");
-        builder.append(count);
-        builder.append("]");
-        return builder.toString();
+        return "LatenciesApplication{" +
+                "count=" + count +
+                '}';
     }
 }

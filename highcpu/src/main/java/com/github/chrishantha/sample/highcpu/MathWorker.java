@@ -22,9 +22,7 @@ public class MathWorker implements Runnable {
 
     private Random random = new Random();
 
-    public MathWorker() {
-    }
-
+    @SuppressWarnings("InfiniteLoopStatement")
     @Override
     public void run() {
         BigDecimal bigDecimal = BigDecimal.ZERO;

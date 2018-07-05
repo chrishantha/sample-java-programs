@@ -21,12 +21,10 @@ public class SleepingWorker implements Runnable {
 
     private Random random = new Random();
 
-    public SleepingWorker() {
-    }
-
+    @SuppressWarnings("InfiniteLoopStatement")
     @Override
     public void run() {
-        Long l = 0l;
+        Long l = 0L;
         while (true) {
             l++;
             try {
@@ -35,7 +33,7 @@ public class SleepingWorker implements Runnable {
                 e.printStackTrace();
             }
             if (l == Long.MAX_VALUE) {
-                l = 0l;
+                l = 0L;
             }
         }
     }

@@ -77,26 +77,16 @@ public class HighCpuApplication implements SampleApplication {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("HighCpuApplication [runHashing=");
-        builder.append(runHashing);
-        builder.append(", runSleeping=");
-        builder.append(runSleeping);
-        builder.append(", runMath=");
-        builder.append(runMath);
-        builder.append(", hashingWorkers=");
-        builder.append(hashingWorkers);
-        builder.append(", sleepingWorkers=");
-        builder.append(sleepingWorkers);
-        builder.append(", mathWorkers=");
-        builder.append(mathWorkers);
-        builder.append(", hashDataLength=");
-        builder.append(hashDataLength);
-        builder.append(", hashingAlgorithm=");
-        builder.append(hashingAlgorithm);
-        builder.append(", exitTimeoutInSeconds=");
-        builder.append(exitTimeoutInSeconds);
-        builder.append("]");
-        return builder.toString();
+        return "HighCpuApplication{" +
+                "runHashing=" + runHashing +
+                ", runSleeping=" + runSleeping +
+                ", runMath=" + runMath +
+                ", hashingWorkers=" + hashingWorkers +
+                ", sleepingWorkers=" + sleepingWorkers +
+                ", mathWorkers=" + mathWorkers +
+                ", hashDataLength=" + hashDataLength +
+                ", hashingAlgorithm='" + hashingAlgorithm + '\'' +
+                ", exitTimeoutInSeconds=" + exitTimeoutInSeconds +
+                '}';
     }
 }

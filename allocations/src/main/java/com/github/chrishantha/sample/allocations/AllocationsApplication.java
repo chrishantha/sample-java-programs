@@ -23,7 +23,7 @@ public class AllocationsApplication implements SampleApplication {
     @Parameter(names = "--max", description = "Max Numbers")
     private long max = 10_000_000L;
 
-    boolean isPrime(Long n) {
+    private boolean isPrime(Long n) {
         //check if n is a multiple of 2
         if (n % 2 == 0) return false;
         //if not, then just check the odds
@@ -47,10 +47,8 @@ public class AllocationsApplication implements SampleApplication {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("AllocationsApplication [max=");
-        builder.append(max);
-        builder.append("]");
-        return builder.toString();
+        return "AllocationsApplication{" +
+                "max=" + max +
+                '}';
     }
 }

@@ -26,7 +26,7 @@ public class App {
 
     private static class CommonArgs {
         @Parameter(names = {"-h", "--help"}, description = "Display Help", help = true)
-        private boolean help;
+        private boolean help = false;
     }
 
     public static void main(String[] args) {
