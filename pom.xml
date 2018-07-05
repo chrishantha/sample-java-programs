@@ -48,8 +48,9 @@
         <module>hotmethods</module>
         <module>latencies</module>
         <module>allocations</module>
-        <module>memoryleak</module>
         <module>deadlock</module>
+        <module>memoryleak</module>
+        <module>threadleak</module>
     </modules>
 
     <dependencyManagement>
@@ -63,6 +64,11 @@
                 <groupId>com.github.chrishantha.sample</groupId>
                 <artifactId>base</artifactId>
                 <version>${samples.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hdrhistogram</groupId>
+                <artifactId>HdrHistogram</artifactId>
+                <version>${hdrhistogram.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -144,5 +150,6 @@
         <javac.target>1.8</javac.target>
         <samples.version>0.0.2-SNAPSHOT</samples.version>
         <jcommander.version>1.72</jcommander.version>
+        <hdrhistogram.version>2.1.10</hdrhistogram.version>
     </properties>
 </project>
