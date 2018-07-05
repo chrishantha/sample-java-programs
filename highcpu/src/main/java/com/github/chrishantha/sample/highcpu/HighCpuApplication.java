@@ -17,9 +17,7 @@ package com.github.chrishantha.sample.highcpu;
 
 import com.beust.jcommander.Parameter;
 import com.github.chrishantha.sample.base.SampleApplication;
-
-import java.util.Timer;
-import java.util.TimerTask;
+import com.github.chrishantha.sample.base.Utils;
 
 public class HighCpuApplication implements SampleApplication {
 
@@ -53,15 +51,7 @@ public class HighCpuApplication implements SampleApplication {
     @Override
     public void start() {
         System.out.println("Starting Application...");
-        if (exitTimeoutInSeconds > 0) {
-            final Timer timer = new Timer();
-            timer.schedule(new TimerTask() {
-                public void run() {
-                    System.out.println("Exiting now...");
-                    System.exit(0);
-                }
-            }, exitTimeoutInSeconds * 1000);
-        }
+        Utils.exitApplication(exitTimeoutInSeconds);
         if (runHashing) {
             for (int i = 0; i < hashingWorkers; i++) {
                 startThread(i, "Hashing", new HashingWorker(hashDataLength, hashingAlgorithm));
