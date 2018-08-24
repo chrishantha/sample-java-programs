@@ -51,4 +51,9 @@ public class AllocationsApplication implements SampleApplication {
                 "max=" + max +
                 '}';
     }
+    
+    public static void main(String[] args)
+    {
+    	System.out.println("testing allocation program");
+    }
 }
