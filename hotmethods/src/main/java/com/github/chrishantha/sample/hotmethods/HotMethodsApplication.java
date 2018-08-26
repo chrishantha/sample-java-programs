@@ -34,6 +34,7 @@ public class HotMethodsApplication implements SampleApplication {
     public void start() {
         Collection<Integer> primeNumbers = new LinkedList<>();
         System.out.println("Generating Prime numbers between 1 and " + max);
+        System.out.println("I AM ADDING THIS LINE");
         for (int i = 1; i < max; i++) {
             boolean isPrimeNumber = true;
             // Check whether the number is prime
@@ -50,7 +51,6 @@ public class HotMethodsApplication implements SampleApplication {
         }
 
         Random random = new Random();
-        System.out.println("Checking Random Prime numbers");
         int count = 0;
         for (int i = 1; i < randomNumbersCount; i++) {
             int randomNumber = random.nextInt(max);
