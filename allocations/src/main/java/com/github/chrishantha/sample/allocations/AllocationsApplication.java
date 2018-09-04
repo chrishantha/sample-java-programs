@@ -54,6 +54,7 @@ public class AllocationsApplication implements SampleApplication {
     
     public static void main(String[] args)
     {
+    	//Testing by Maria
     	System.out.println("testing allocation program");
     }
 }
