@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 M. Isuru Tharanga Chrishantha Perera
+ * Copyright 2018 M. Isuru Tharanga Chrishantha Perer
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/*Author Divya*/
 package com.github.chrishantha.sample.base;
 
 public interface SampleApplication {
