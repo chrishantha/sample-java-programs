@@ -150,6 +150,6 @@
         <javac.target>1.8</javac.target>
         <samples.version>0.0.2-SNAPSHOT</samples.version>
         <jcommander.version>1.72</jcommander.version>
-        <hdrhistogram.version>2.1.10</hdrhistogram.version>
+        <hdrhistogram.version>2.1.11</hdrhistogram.version>
     </properties>
 </project>
