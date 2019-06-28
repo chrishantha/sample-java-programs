@@ -1,5 +1,5 @@
-Sample to a memory leak in Java Application
-===========================================
+Sample to show a memory leak in Java Application
+================================================
 
 This sample application implements a simple caching solution using a `HashMap`.
 
