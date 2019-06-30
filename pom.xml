@@ -51,6 +51,7 @@
         <module>deadlock</module>
         <module>memoryleak</module>
         <module>threadleak</module>
+        <module>memoryref</module>
     </modules>
 
     <dependencyManagement>
