@@ -1,5 +1,5 @@
-Sample to show latencies in Java Flight Recording
-=================================================
+Sample to show latencies in a Java Flight Recording
+===================================================
 
 This program has two threads: Even and Odd to print Even and Odd numbers.
 

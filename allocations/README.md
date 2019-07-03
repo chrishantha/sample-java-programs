@@ -1,5 +1,5 @@
-Sample to show allocations in Java Flight Recording
-===================================================
+Sample to show allocations in a Java Flight Recording
+=====================================================
 
 This program checks whether a number is prime.
 
@@ -12,8 +12,8 @@ Run the program and also make a profiling recording.
 
 In Memory -> Allocation tab, you should see a high allocation rate.
 
-Also see Memory -> Garbage Collections tab and check the frequency of GC events.
+Also, see Memory -> Garbage Collections tab and check the frequency of GC events.
 
 ### Improving Performance
 
-Try the program again after changing `Long` types to primitive `long`
+Try the program again after changing `Long` types to primitive `long`.

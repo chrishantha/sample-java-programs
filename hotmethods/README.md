@@ -1,5 +1,5 @@
-Sample to show hot methods in Java Flight Recording
-===================================================
+Sample to show hot methods in a Java Flight Recording
+=====================================================
 
 This program checks whether a given random number is primitive or not.
 
