@@ -40,13 +40,10 @@ A heap dump can be obtained from following command to look at the object referen
 jmap -dump:file=target/heap.hprof $(pgrep -f memoryref)
 ```
 
-Use [Eclipse Memory Analyzer Tool (MAT)][mat] to analyze the  heap dump.
+Use [Eclipse Memory Analyzer Tool (MAT)](https://www.eclipse.org/mat/) to analyze the  heap dump.
 
 For more information, read following story based on this sample application.
 
-[Basic concepts of Java heap dump analysis with Eclipse Memory Analyzer Tool (MAT)][medium]
-
-[mat]:(https://www.eclipse.org/mat/)
-[medium]:(https://medium.com/@chrishantha/basic-concepts-of-java-heap-dump-analysis-with-mat-e3615fd79eb)
+[Basic concepts of Java heap dump analysis with Eclipse Memory Analyzer Tool (MAT)](https://medium.com/@chrishantha/basic-concepts-of-java-heap-dump-analysis-with-mat-e3615fd79eb)
 
 Note: Images were created using [draw.io](https://www.draw.io/).
