@@ -43,6 +43,8 @@ public class AllocationsApplication implements SampleApplication {
             }
         }
         System.out.format("Found %d prime numbers%n", primeCount);
+        System.out.format("Testing");
+        System.out.format("Testing");
     }
 
     @Override
