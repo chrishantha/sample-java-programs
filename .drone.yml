@@ -10,5 +10,6 @@ steps:
   - mvn clean install
 
 trigger:
-  branch:
-  - master
+  - refs/heads/master
+  - refs/heads/**
+  - refs/pull/*/head
