@@ -1,0 +1,14 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- nme: build
+  image: maven:3-jdk-10
+  commands:
+  - mvn clean install
+
+trigger:
+  branch:
+  - master
