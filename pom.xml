@@ -24,7 +24,7 @@
     <packaging>pom</packaging>
 
     <name>Java Samples</name>
-    <description>Java Sample Code to be used in examples (in blog, etc)</description>
+    <description>Java Sample Code to be used (in blog, etc)</description>
     <inceptionYear>2015</inceptionYear>
 
     <licenses>
