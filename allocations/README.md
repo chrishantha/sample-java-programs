@@ -6,7 +6,9 @@ This program checks whether a number is prime.
 Run the program and also make a profiling recording.
 
 ### How to run
-`java -Xms64m -Xmx64m -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=30s,name=Allocations,filename=allocations.jfr -XX:FlightRecorderOptions=loglevel=info -jar target/allocations.jar`
+```bash
+java -Xms64m -Xmx64m -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=30s,name=Allocations,filename=allocations.jfr -Xlog:jfr=info -jar target/allocations.jar
+```
 
 ### Analyzing Java Flight Recording
 
