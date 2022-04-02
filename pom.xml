@@ -125,7 +125,7 @@
                         <version>0.13</version>
                         <configuration>
                             <excludes>
-                                <exclude>**/README.md</exclude>
+                                <exclude>**/README2.md</exclude>
                                 <exclude>.travis.yml</exclude>
                                 <exclude>**/*.svg</exclude>
                                 <exclude>dependency-reduced-pom.xml</exclude>
