@@ -21,7 +21,7 @@
     <groupId>com.github.chrishantha.sample</groupId>
     <artifactId>java-samples</artifactId>
     <version>0.0.2-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>war</packaging>
 
     <name>Java Samples</name>
     <description>Java Sample Code to be used in examples (in blog, etc)</description>
