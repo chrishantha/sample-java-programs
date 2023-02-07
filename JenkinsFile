@@ -19,7 +19,7 @@ pipeline {
                 git 'https://github.com/Nishvika/maven3.git'
                 sh 'mvn install'
                 echo 'Hello sravani'
-                sleep 200
+               
             }
         }
         stage('Test_when'){
