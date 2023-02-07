@@ -23,7 +23,7 @@ pipeline {
         }
         stage('sravani') {
             steps {
-                git branch: '$params.Branch', url: 'https://github.com/Nishvika/sample-java-programs.git'
+                git branch: $params.Branch, url: 'https://github.com/Nishvika/sample-java-programs.git'
                 sh 'mvn install'
                 echo 'Hello sravani'
                 echo "The entered day is $params.Day"
