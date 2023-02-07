@@ -1,6 +1,6 @@
 pipeline {
     environment {
-               JAVA_HOME = "/var/Jenkins_Home"
+               JAVA_HOMEO = "/var/Jenkins_Home"
     }
     parameters {
                choice choices: ['Saturday', 'Sunday', 'Monday'], description: 'Enter the Day', name: 'Day'
