@@ -27,7 +27,7 @@ pipeline {
                 sh 'mvn install'
                 echo 'Hello sravani'
                 echo "The entered day is $params.Day"
-                echo "The environment variable value for JAVA_HOME is $JAVA_HOME "
+                echo "The environment variable value for JAVA_HOMEO is $JAVA_HOMEO "
                
             }
         }
