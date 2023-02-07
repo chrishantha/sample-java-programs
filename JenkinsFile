@@ -22,5 +22,13 @@ pipeline {
                 sleep 200
             }
         }
+        stage('Test_when'){
+             when {
+                  branch 'development'
+             }
+             steps {
+                   echo "Build is getting executed from development branch"
+             }
+        }
     }
 }
