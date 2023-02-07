@@ -15,20 +15,15 @@ pipeline {
             }
         }
         stage('sravani') {
+             when {
+                  branch 'development'
+             }
             steps {
                 git branch: 'development', url: 'https://github.com/Nishvika/sample-java-programs.git'
                 sh 'mvn install'
                 echo 'Hello sravani'
                
             }
-        }
-        stage('Test_when'){
-             when {
-                  branch 'development'
-             }
-             steps {
-                   echo "Build is getting executed from development branch"
-             }
         }
     }
 }
