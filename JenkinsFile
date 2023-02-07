@@ -1,4 +1,11 @@
 pipeline {
+    environment {
+               JAVA_HOME = "/var/Jenkins_Home"
+    }
+    parameters {
+               choice choices: ['Saturday', 'Sunday', 'Monday'], description: 'Enter the Day', name: 'Day'
+               choice choices: ['master', 'development', 'feature'], description: 'Enter the branch name', name: 'Branch'
+    }
     options {
             buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '10')
             timeout(time: 3, unit: 'MINUTES')
@@ -15,13 +22,12 @@ pipeline {
             }
         }
         stage('sravani') {
-             when {
-                  branch 'development'
-             }
             steps {
-                git branch: 'development', url: 'https://github.com/Nishvika/sample-java-programs.git'
+                git branch: '$params.Branch', url: 'https://github.com/Nishvika/sample-java-programs.git'
                 sh 'mvn install'
                 echo 'Hello sravani'
+                echo "The entered day is $params.Day"
+                echo "The environment variable value for JAVA_HOME is $JAVA_HOME "
                
             }
         }
