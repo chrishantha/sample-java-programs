@@ -16,7 +16,7 @@ pipeline {
         }
         stage('sravani') {
             steps {
-                git 'https://github.com/Nishvika/maven3.git'
+                git branch: 'development', url: 'https://github.com/Nishvika/sample-java-programs.git'
                 sh 'mvn install'
                 echo 'Hello sravani'
                
