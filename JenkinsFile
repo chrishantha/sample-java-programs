@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    tools {
+           maven 'maven-tool'
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('sravani') {
+            steps {
+                git 'https://github.com/Nishvika/maven3.git'
+                sh 'mvn install'
+                echo 'Hello sravani'
+            }
+        }
+    }
+}
