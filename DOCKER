@@ -1,0 +1,23 @@
+# ====== Build Stage ======
+FROM maven:3.9.4-eclipse-temurin-17 AS build
+
+# Set workdir
+WORKDIR /app
+
+# Copy pom.xml and download dependencies (caches better)
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
+
+# Copy source and build
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# ====== Run Stage ======
+FROM eclipse-temurin:17-jdk-alpine
+
+WORKDIR /app
+# Copy only the built jar from previous stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Run the app
+ENTRYPOINT ["java", "-jar", "app.jar"]
